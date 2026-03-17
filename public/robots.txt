@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://subornadashtuli.com/sitemap-index.xml

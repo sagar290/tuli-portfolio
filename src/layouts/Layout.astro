@@ -4,9 +4,16 @@ import '../styles/global.css';
 interface Props {
 	title: string;
 	description?: string;
+	canonicalURL?: string;
+	image?: string;
 }
 
-const { title, description = "Suborna Dash Tuli - Professional Female Voiceover Artist, Poetry Narrator, and Freelance Voice Talent." } = Astro.props;
+const { 
+	title, 
+	description = "Suborna Dash Tuli - Professional Female Voiceover Artist, Poetry Narrator, and Freelance Voice Talent based in Dhaka, Bangladesh. Specializing in commercial VO, audiobook narration, and Bengali poetry recitation.",
+	canonicalURL = new URL(Astro.url.pathname, Astro.site).href,
+	image = "/hero.jpg"
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -21,12 +28,67 @@ const { title, description = "Suborna Dash Tuli - Professional Female Voiceover 
 		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 		<link rel="manifest" href="/site.webmanifest">
 		<meta name="generator" content={Astro.generator} />
+		
+		<!-- SEO Meta Tags -->
 		<meta name="description" content={description} />
-		<meta name="keywords" content="Female Voiceover Artist, Poetry Narrator, Freelance Voice Talent, Audiobook Narration, Commercial VO" />
+		<meta name="keywords" content="Female Voiceover Artist, Poetry Narrator, Freelance Voice Talent, Audiobook Narration, Commercial VO, Bengali Voiceover, Bangla Poetry Recitation, Voice Talent Dhaka, Professional Voice Actor" />
+		<meta name="author" content="Suborna Dash Tuli" />
+		<meta name="robots" content="index, follow" />
+		<link rel="canonical" href={canonicalURL} />
+		
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={canonicalURL} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={new URL(image, Astro.site)} />
+		<meta property="og:site_name" content="Suborna Dash Tuli" />
+		<meta property="og:locale" content="en_US" />
+		
+		<!-- Twitter -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:url" content={canonicalURL} />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={new URL(image, Astro.site)} />
+		
 		<title>{title}</title>
+		
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Noto+Serif+Bengali:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+		
+		<!-- Structured Data - Person/LocalBusiness -->
+		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "Person",
+			"name": "Suborna Dash Tuli",
+			"jobTitle": "Voiceover Artist & Poetry Narrator",
+			"description": "Professional female voiceover artist specializing in commercial VO, audiobook narration, and Bengali poetry recitation.",
+			"url": "https://subornadashtuli.com",
+			"image": "https://subornadashtuli.com/hero.jpg",
+			"sameAs": [
+				"https://soundcloud.com/suborna-dash-tuli",
+				"https://www.facebook.com/suborna.dashtuli/",
+				"https://www.youtube.com/@suborna.dashtuli",
+				"https://audio.com/subarnadastule"
+			],
+			"address": {
+				"@type": "PostalAddress",
+				"addressLocality": "Dhaka",
+				"addressCountry": "Bangladesh"
+			},
+			"priceRange": "$$",
+			"knowsAbout": [
+				"Voice Acting",
+				"Audio Narration",
+				"Poetry Recitation",
+				"Commercial Voiceover",
+				"Audiobook Recording"
+			]
+		}
+		</script>
 	</head>
 	<body class="bg-cream text-charcoal font-sans antialiased selection:bg-gold selection:text-white">
 		<slot />
