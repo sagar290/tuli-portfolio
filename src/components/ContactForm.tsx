@@ -1,16 +1,33 @@
 import { useState } from 'react';
 
 export default function ContactForm() {
-  const [status, setStatus] = useState<'' | 'success' | 'submitting'>('');
+  const [status, setStatus] = useState<'' | 'success' | 'submitting' | 'error'>('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('submitting');
-    // Simulate submission
-    setTimeout(() => {
-      setStatus('success');
-      (e.target as HTMLFormElement).reset();
-    }, 1500);
+    
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
+    
+    try {
+      const response = await fetch('https://formspree.io/f/xgonplpp', {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+      
+      if (response.ok) {
+        setStatus('success');
+        form.reset();
+      } else {
+        setStatus('error');
+      }
+    } catch (error) {
+      setStatus('error');
+    }
   };
 
   return (
@@ -27,7 +44,12 @@ export default function ContactForm() {
             </p>
           </div>
 
-          <form onSubmit={handleSubmit} className="bg-white p-10 md:p-14 rounded-3xl shadow-xl shadow-gold/5 border border-cream/50 relative overflow-hidden">
+          <form 
+            onSubmit={handleSubmit} 
+            action="https://formspree.io/f/xgonplpp"
+            method="POST"
+            className="bg-white p-10 md:p-14 rounded-3xl shadow-xl shadow-gold/5 border border-cream/50 relative overflow-hidden"
+          >
             <div className="absolute top-0 left-0 w-2 bg-gold h-full"></div>
             
             {status === 'success' ? (
@@ -53,6 +75,7 @@ export default function ContactForm() {
                     <input 
                       type="text" 
                       id="name" 
+                      name="name"
                       required 
                       className="w-full bg-cream/30 border-b-2 border-charcoal/10 px-4 py-3 focus:outline-none focus:border-gold transition-colors font-sans focus:bg-white"
                       placeholder="Jane Doe"
@@ -63,6 +86,7 @@ export default function ContactForm() {
                     <input 
                       type="email" 
                       id="email" 
+                      name="email"
                       required 
                       className="w-full bg-cream/30 border-b-2 border-charcoal/10 px-4 py-3 focus:outline-none focus:border-gold transition-colors font-sans focus:bg-white"
                       placeholder="jane@example.com"
@@ -74,6 +98,7 @@ export default function ContactForm() {
                   <label htmlFor="project" className="block text-sm font-bold text-charcoal/80 uppercase tracking-widest mb-3">Project Type</label>
                   <select 
                     id="project" 
+                    name="project"
                     className="w-full bg-cream/30 border-b-2 border-charcoal/10 px-4 py-3 focus:outline-none focus:border-gold transition-colors font-sans text-charcoal/80 focus:bg-white appearance-none cursor-pointer"
                   >
                     <option value="">Select a service...</option>
@@ -88,6 +113,7 @@ export default function ContactForm() {
                   <label htmlFor="message" className="block text-sm font-bold text-charcoal/80 uppercase tracking-widest mb-3">Message</label>
                   <textarea 
                     id="message" 
+                    name="message"
                     rows={5} 
                     required 
                     className="w-full bg-cream/30 border-b-2 border-charcoal/10 px-4 py-3 focus:outline-none focus:border-gold transition-colors resize-none font-sans focus:bg-white"
@@ -105,6 +131,11 @@ export default function ContactForm() {
                     <svg className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" /></svg>
                   )}
                 </button>
+                {status === 'error' && (
+                  <p className="text-red-500 text-sm font-sans text-center mt-4">
+                    Something went wrong. Please try again or contact me directly via social media.
+                  </p>
+                )}
               </div>
             )}
           </form>
