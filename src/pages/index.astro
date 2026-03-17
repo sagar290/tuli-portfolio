@@ -14,9 +14,31 @@ const cleanServices = servicesFiles.map((file: any) => {
   return {
     title: file.frontmatter.title,
     icon: file.frontmatter.icon,
-    // Provide a simple text extraction. `file.compiledContent()` usually is a function returning a string promise if eager is true? or eager just returns the module. 
-    // Wait, in Astro, `file.rawContent()` and `file.compiledContent()` are on the module.
     body: file.rawContent ? file.rawContent().trim() : 'Service details.'
+  };
+});
+
+// Fetch all audio tracks from audio collection
+const audioFiles = Object.values(import.meta.glob('../content/audio/*.md', { eager: true }));
+
+const audioTracks = audioFiles.map((file: any) => {
+  return {
+    id: file.frontmatter.id,
+    label: file.frontmatter.label,
+    platform: file.frontmatter.platform
+  };
+});
+
+// Fetch all pricing plans from pricing collection
+const pricingFiles = Object.values(import.meta.glob('../content/pricing/*.md', { eager: true }));
+
+const pricingPlans = pricingFiles.map((file: any) => {
+  return {
+    title: file.frontmatter.title,
+    price: file.frontmatter.price,
+    description: file.frontmatter.description,
+    featured: file.frontmatter.featured,
+    features: file.frontmatter.features
   };
 });
 ---
@@ -40,9 +62,9 @@ const cleanServices = servicesFiles.map((file: any) => {
 
   <main class="pt-20">
     <Hero />
-    <AudioGallery client:visible />
+    <AudioGallery tracks={audioTracks} client:visible />
     <Services services={cleanServices} />
-    <Pricing />
+    <Pricing plans={pricingPlans} />
     <Testimonials client:visible />
     <ContactForm client:visible />
   </main>

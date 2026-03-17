@@ -35,6 +35,12 @@ export default function Testimonials() {
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-serif text-charcoal font-bold tracking-tight">Client Praise</h2>
+          <p className="text-lg text-charcoal/70 font-sans max-w-2xl mx-auto font-light leading-relaxed mt-4 mb-2">
+            সন্তুষ্ট ক্লায়েন্টদের মতামত এবং প্রশংসা।
+          </p>
+          <p className="text-xl text-charcoal/70 font-sans max-w-2xl mx-auto font-light leading-relaxed">
+            What our clients say about working with us.
+          </p>
         </div>
 
         <div className="max-w-4xl mx-auto text-center relative min-h-[16rem] md:min-h-[12rem] flex flex-col justify-center">

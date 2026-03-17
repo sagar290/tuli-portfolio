@@ -3,12 +3,14 @@
 @theme {
   --color-cream: #fbfbf9;
   --color-charcoal: #2d2a26;
-  --color-gold: #c5a880;
-  --color-gold-muted: #d4c0a5;
+  --color-gold: #8B5A2B;
+  --color-gold-muted: #c5a880;
   --color-white: #ffffff;
   
   --font-serif: "Playfair Display", serif;
   --font-sans: "Inter", sans-serif;
+  --font-bangla-serif: "Noto Serif Bengali", "Li Ador Noirrit", serif;
+  +++++++ REPLACE
 }
 
 body {

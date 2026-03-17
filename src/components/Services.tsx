@@ -27,6 +27,9 @@ export default function Services({ services }: { services: Service[] }) {
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-24">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-charcoal mb-6 font-bold tracking-tight">Vocal Expertise</h2>
+          <p className="text-lg text-charcoal/70 font-sans max-w-2xl mx-auto font-light leading-relaxed mb-2">
+            পেশাদার, উষ্ণ এবং আত্মিক কণ্ঠের মাধ্যমে আপনার ব্র্যান্ড এবং গল্পকে উন্নত করা।
+          </p>
           <p className="text-xl text-charcoal/70 font-sans max-w-2xl mx-auto font-light leading-relaxed">
             Elevating your brand and story with a voice that is professional, warm, and soulful.
           </p>

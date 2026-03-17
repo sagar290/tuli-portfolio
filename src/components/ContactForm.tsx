@@ -19,6 +19,9 @@ export default function ContactForm() {
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-6xl font-serif text-charcoal mb-6 font-bold tracking-tight">Let's Connect</h2>
+            <p className="text-lg text-charcoal/70 font-sans font-light leading-relaxed mb-2">
+              আপনার প্রজেক্টে কণ্ঠ দিতে প্রস্তুত? নিচে যোগাযোগ করুন।
+            </p>
             <p className="text-xl text-charcoal/70 font-sans font-light leading-relaxed">
               Ready to give your project a voice? Reach out below to discuss rates, availability, or request a custom audition.
             </p>
