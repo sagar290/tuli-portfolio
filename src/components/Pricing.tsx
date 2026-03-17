@@ -45,7 +45,7 @@ export default function Pricing({ plans }: PricingProps) {
               <p className={`font-sans font-light mb-6 md:mb-8 h-12 md:h-16 text-sm md:text-base ${plan.featured ? 'text-cream/80' : 'text-charcoal/70'}`}>{plan.description}</p>
               
               <div className="mb-6 md:mb-8 flex items-baseline gap-2">
-                {plan.price !== 'PFH' && <span className={`text-xl md:text-2xl font-serif ${plan.featured ? 'text-white' : 'text-charcoal'}`}>$</span>}
+                {plan.price !== 'PFH' && <span className={`text-xl md:text-2xl font-serif ${plan.featured ? 'text-white' : 'text-charcoal'}`}>BDT</span>}
                 <span className={`text-5xl md:text-6xl font-serif font-bold tracking-tight ${plan.featured ? 'text-white' : 'text-charcoal'}`}>{plan.price}</span>
               </div>
 

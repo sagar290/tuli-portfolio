@@ -1,6 +1,6 @@
 ---
 title: "Commercial VO"
-price: "350"
+price: "10,000"
 description: "For brands, advertisements, and promotional material needing a warm, persuasive voice."
 featured: true
 features:

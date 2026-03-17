@@ -1,6 +1,6 @@
 ---
 title: "Poetry & Artistic"
-price: "150"
+price: "1000"
 description: "Perfect for artists, animators, and personal projects seeking emotional depth."
 featured: false
 features:
