@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero';
 import AudioGallery from '../components/AudioGallery';
 import Services from '../components/Services';
-import Pricing from '../components/Pricing';
+// import Pricing from '../components/Pricing';
 import Testimonials from '../components/Testimonials';
 import ContactForm from '../components/ContactForm';
 
@@ -30,17 +30,17 @@ const audioTracks = audioFiles.map((file: any) => {
 });
 
 // Fetch all pricing plans from pricing collection
-const pricingFiles = Object.values(import.meta.glob('../content/pricing/*.md', { eager: true }));
+// const pricingFiles = Object.values(import.meta.glob('../content/pricing/*.md', { eager: true }));
 
-const pricingPlans = pricingFiles.map((file: any) => {
-  return {
-    title: file.frontmatter.title,
-    price: file.frontmatter.price,
-    description: file.frontmatter.description,
-    featured: file.frontmatter.featured,
-    features: file.frontmatter.features
-  };
-});
+// const pricingPlans = pricingFiles.map((file: any) => {
+//   return {
+//     title: file.frontmatter.title,
+//     price: file.frontmatter.price,
+//     description: file.frontmatter.description,
+//     featured: file.frontmatter.featured,
+//     features: file.frontmatter.features
+//   };
+// });
 ---
 
 <Layout title="Suborna Dash Tuli | Professional Voiceover Artist & Poetry Narrator">
@@ -64,7 +64,7 @@ const pricingPlans = pricingFiles.map((file: any) => {
     <Hero />
     <AudioGallery tracks={audioTracks} client:visible />
     <Services services={cleanServices} />
-    <Pricing plans={pricingPlans} />
+    {/* <Pricing plans={pricingPlans} /> */}
     <Testimonials client:visible />
     <ContactForm client:visible />
   </main>
