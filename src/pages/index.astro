@@ -4,7 +4,7 @@ import Hero from '../components/Hero';
 import AudioGallery from '../components/AudioGallery';
 import Services from '../components/Services';
 // import Pricing from '../components/Pricing';
-import Testimonials from '../components/Testimonials';
+// import Testimonials from '../components/Testimonials';
 import ContactForm from '../components/ContactForm';
 
 // Fetch all markdown files from the services collection
@@ -65,7 +65,7 @@ const audioTracks = audioFiles.map((file: any) => {
     <AudioGallery tracks={audioTracks} client:visible />
     <Services services={cleanServices} />
     {/* <Pricing plans={pricingPlans} /> */}
-    <Testimonials client:visible />
+    {/* <Testimonials client:visible /> */}
     <ContactForm client:visible />
   </main>
 
