@@ -45,6 +45,36 @@ const roles = [
     ],
   },
 ];
+
+const certificates = [
+  {
+    title: 'Recitation and Pronunciation',
+    organization: 'Shilpakala Academy, Muladi, Barishal',
+    year: '2013',
+    duration: '3 days',
+    logo: 'https://images.seeklogo.com/logo-png/61/1/bangladesh-shilpakala-academy-logo-png_seeklogo-611881.png',
+    logoAlt: 'Bangladesh Shilpakala Academy logo',
+    url: 'https://shilpakala.gov.bd/',
+  },
+  {
+    title: 'Girl Guides Training — Guide Camping',
+    organization: 'Bangladesh Girl Guides Association',
+    year: '2017',
+    duration: '3 days',
+    logo: 'https://s3.eu-west-2.amazonaws.com/wagggs.prod/images/LOGO_-_BANGLADESH.max-300x150.jpg',
+    logoAlt: 'Bangladesh Girl Guides Association emblem',
+    url: 'https://girlguides.portal.gov.bd/',
+  },
+  {
+    title: 'Day-long Training on Climate Change',
+    organization: 'CFTM, ICCCAD, and BRAC',
+    year: '2017',
+    duration: '1 day',
+    logo: 'https://iub.ac.bd/media-backend/media/icccad-df81f3a0-2b56-40fd-a41f-232ebdaef253.png',
+    logoAlt: 'ICCCAD logo',
+    url: 'https://icccad.net/',
+  },
+];
 ---
 
 <section id="experience" aria-labelledby="experience-title" class="py-24 md:py-32 bg-cream scroll-mt-24">
@@ -99,6 +129,29 @@ const roles = [
             <ul class="list-disc pl-5 space-y-2 text-base font-sans text-charcoal/70 leading-relaxed marker:text-gold">
               {role.responsibilities.map(responsibility => <li>{responsibility}</li>)}
             </ul>
+          </article>
+        ))}
+      </div>
+    </div>
+    <div class="max-w-5xl mx-auto mt-20 md:mt-24">
+      <div class="text-center mb-10 md:mb-12">
+        <p class="text-xs md:text-sm font-sans font-semibold tracking-[0.18em] uppercase text-charcoal/60 mb-3">Professional Development</p>
+        <h3 class="text-3xl md:text-4xl font-serif font-semibold text-charcoal">Training & Certificates</h3>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
+        {certificates.map(certificate => (
+          <article class="flex min-w-0 flex-col rounded-2xl border border-gold/20 bg-white p-6 md:p-7 shadow-sm shadow-charcoal/[0.03] last:md:col-span-2 last:md:mx-auto last:md:w-[calc(50%-0.75rem)]">
+            <div class="flex min-w-0 items-center gap-4 mb-5">
+              <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-gold/15 bg-cream/50 p-2">
+                <img src={certificate.logo} alt={certificate.logoAlt} loading="lazy" decoding="async" class="max-h-10 max-w-10 object-contain" />
+              </div>
+              <p class="text-sm font-sans font-medium text-charcoal/60">{certificate.year}<span aria-hidden="true"> · </span>{certificate.duration}</p>
+            </div>
+            <h4 class="text-xl md:text-2xl font-serif font-semibold leading-snug text-charcoal">{certificate.title}</h4>
+            <p class="mt-2 mb-5 text-sm md:text-base font-sans leading-relaxed text-charcoal/70">{certificate.organization}</p>
+            <a href={certificate.url} target="_blank" rel="noopener noreferrer" aria-label={`Visit ${certificate.organization} website (opens in a new tab)`} class="mt-auto self-start text-sm font-sans text-charcoal underline underline-offset-4 hover:text-gold transition-colors">
+              Organization <span aria-hidden="true">↗</span>
+            </a>
           </article>
         ))}
       </div>
