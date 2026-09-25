@@ -42,6 +42,9 @@ export default function ContactForm() {
             <p className="text-xl text-charcoal/70 font-sans font-light leading-relaxed">
               Ready to give your project a voice? Reach out below to discuss rates, availability, or request a custom audition.
             </p>
+            <a href="mailto:talk@subarna.me" className="inline-block mt-6 text-lg font-sans text-charcoal underline underline-offset-4 hover:text-gold transition-colors">
+              talk@subarna.me
+            </a>
           </div>
 
           <form 
@@ -133,7 +136,7 @@ export default function ContactForm() {
                 </button>
                 {status === 'error' && (
                   <p className="text-red-500 text-sm font-sans text-center mt-4">
-                    Something went wrong. Please try again or contact me directly via social media.
+                    Something went wrong. Please try again or email <a href="mailto:talk@subarna.me" className="underline">talk@subarna.me</a>.
                   </p>
                 )}
               </div>

@@ -20,13 +20,13 @@ export default function AudioGallery({ tracks }: AudioGalleryProps) {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div className="flex flex-wrap justify-center gap-8 max-w-7xl mx-auto">
           {tracks.map(track => (
             <div 
               key={track.id}
-              className="flex flex-col"
+              className="flex flex-col min-w-0 w-full md:w-[calc((100%-2rem)/2)] xl:w-[calc((100%-4rem)/3)] rounded-2xl border border-gold/15 bg-cream/40 p-5 lg:p-6"
             >
-              <h3 className="text-lg font-semibold text-charcoal mb-4 font-sans tracking-wide">
+              <h3 className="text-lg font-semibold text-charcoal mb-5 md:min-h-[3.5rem] font-sans tracking-wide leading-7">
                 {track.label}
               </h3>
               <div 
@@ -35,6 +35,7 @@ export default function AudioGallery({ tracks }: AudioGalleryProps) {
               >
                 {track.platform === 'audio.com' ? (
                   <iframe
+                    title={track.label}
                     src={`https://audio.com/embed/audio/${track.id}?theme=image`}
                     style={{ display: 'block', borderRadius: '1px', border: 'none', height: '204px', width: '100%' }}
                     scrolling="no"
@@ -43,6 +44,7 @@ export default function AudioGallery({ tracks }: AudioGalleryProps) {
                   />
                 ) : (
                   <iframe
+                    title={track.label}
                     width="100%"
                     height="166"
                     scrolling="no"

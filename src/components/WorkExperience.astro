@@ -1,0 +1,107 @@
+---
+const projects = [
+  {
+    name: 'Alopoth',
+    logo: '/logos/alopoth.png',
+    website: 'http://alopoth.com/',
+    demo: 'https://www.facebook.com/share/v/19boBYFiCj/',
+  },
+  {
+    name: 'Deshistartup',
+    logo: '/logos/deshistartup.png',
+    website: 'https://deshistartup.com/',
+    demo: 'https://www.facebook.com/share/v/1F2YSvBGur/',
+  },
+];
+
+const roles = [
+  {
+    title: 'Recitation Teacher',
+    organization: 'Department of Women and Child Affairs',
+    period: 'Sep 2020 – Present',
+    responsibilities: [
+      'Served as a program volunteer, organizing cultural and educational competitions.',
+      'Coordinated parent–teacher meetings and gatherings for guardians.',
+    ],
+  },
+  {
+    title: 'Cultural Editor — Youth Forum, Barishal District',
+    organization: 'Voluntary Service Overseas',
+    period: 'June 2023 – June 2024',
+    responsibilities: [
+      'Organized cultural programs, dramas, and talent shows for national and international observances.',
+      'Engaged and recruited young volunteers in Barishal through creative and artistic activities.',
+      'Created opportunities for local youth to showcase their creative skills and develop leadership.',
+    ],
+  },
+  {
+    title: 'Recitation Trainer',
+    organization: 'Ideal Pre Cadet School, Barishal',
+    period: 'Jan 2017 – Dec 2019',
+    responsibilities: [
+      'Trained students in pronunciation, voice projection, voice modulation, articulation, and stage presence.',
+      'Developed lesson plans for recitation and public speaking over three years.',
+      'Prepared students for national competitions and public performances, building confidence on stage.',
+    ],
+  },
+];
+---
+
+<section id="experience" aria-labelledby="experience-title" class="py-24 md:py-32 bg-cream scroll-mt-24">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-16">
+      <p class="text-sm font-sans font-semibold tracking-widest uppercase text-charcoal/60 mb-4">Voice, Teaching & Culture</p>
+      <h2 id="experience-title" class="text-4xl md:text-5xl lg:text-6xl font-serif text-charcoal mb-6 font-bold tracking-tight">Work Experience</h2>
+      <p class="text-xl text-charcoal/70 font-sans max-w-2xl mx-auto font-light leading-relaxed">
+        From voiceover collaborations to recitation training and cultural programs, helping stories and voices reach an audience.
+      </p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+      {projects.map(project => (
+        <article class="bg-white rounded-3xl border border-gold/20 p-8 md:p-10">
+          <img
+            src={project.logo}
+            alt={`${project.name} logo`}
+            width="80"
+            height="80"
+            loading="lazy"
+            decoding="async"
+            class="w-20 h-20 object-contain rounded-xl mb-6"
+          />
+          <p class="text-sm font-sans tracking-widest uppercase text-charcoal/60 mb-4">Voiceover</p>
+          <h3 class="text-3xl md:text-4xl font-serif font-semibold text-charcoal mb-8">{project.name}</h3>
+          <div class="flex flex-wrap items-center gap-6 font-sans">
+            <a href={project.demo} target="_blank" rel="noopener noreferrer" aria-label={`Watch ${project.name} demo on Facebook (opens in a new tab)`} class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-charcoal text-cream font-medium hover:bg-gold transition-colors focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-charcoal">
+              <svg aria-hidden="true" class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg>
+              Watch Demo
+            </a>
+            <a href={project.website} target="_blank" rel="noopener noreferrer" aria-label={`Visit ${project.name} website (opens in a new tab)`} class="text-charcoal underline underline-offset-4 hover:text-gold transition-colors focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-charcoal">
+              Visit Website <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+          <p class="mt-5 text-sm font-sans text-charcoal/60">Demo opens on Facebook.</p>
+        </article>
+      ))}
+    </div>
+    <div class="max-w-5xl mx-auto mt-16 md:mt-20">
+      <h3 class="text-2xl md:text-3xl font-serif font-semibold text-charcoal mb-10">Teaching & Cultural Experience</h3>
+      <div class="border-l border-gold/30 ml-2 space-y-12">
+        {roles.map(role => (
+          <article class="relative pl-6 md:pl-10">
+            <span aria-hidden="true" class="absolute -left-1.5 top-2 h-3 w-3 rounded-full bg-gold"></span>
+            <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-3 md:gap-8 mb-4">
+              <div class="min-w-0">
+                <h4 class="text-xl md:text-2xl font-serif font-semibold text-charcoal leading-snug">{role.title}</h4>
+                <p class="mt-2 text-base font-sans font-medium text-charcoal/80">{role.organization}</p>
+              </div>
+              <p class="shrink-0 text-sm font-sans text-charcoal/60 md:pt-1">{role.period}</p>
+            </div>
+            <ul class="list-disc pl-5 space-y-2 text-base font-sans text-charcoal/70 leading-relaxed marker:text-gold">
+              {role.responsibilities.map(responsibility => <li>{responsibility}</li>)}
+            </ul>
+          </article>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

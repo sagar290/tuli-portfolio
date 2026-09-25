@@ -1,11 +1,12 @@
 @import "tailwindcss";
 
 @theme {
-  --color-cream: #fbfbf9;
-  --color-charcoal: #2d2a26;
-  --color-gold: #8B5A2B;
-  --color-gold-muted: #c5a880;
-  --color-white: #ffffff;
+  /* Warm ivory, espresso, vermilion, and saffron sampled from hero.jpg. */
+  --color-cream: #f4eee6;
+  --color-charcoal: #30231f;
+  --color-gold: #b9442f;
+  --color-gold-muted: #d59651;
+  --color-white: #fffaf3;
 
   --font-serif: "Playfair Display", serif;
   --font-sans: "Inter", sans-serif;

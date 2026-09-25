@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero';
 import AudioGallery from '../components/AudioGallery';
 import Services from '../components/Services';
+import WorkExperience from '../components/WorkExperience.astro';
 // import Pricing from '../components/Pricing';
 // import Testimonials from '../components/Testimonials';
 import ContactForm from '../components/ContactForm';
@@ -21,7 +22,7 @@ const cleanServices = servicesFiles.map((file: any) => {
 // Fetch all audio tracks from audio collection
 const audioFiles = Object.values(import.meta.glob('../content/audio/*.md', { eager: true }));
 
-const audioTracks = audioFiles.map((file: any) => {
+const audioTracks = audioFiles.filter((file: any) => !file.frontmatter.hidden).map((file: any) => {
   return {
     id: file.frontmatter.id,
     label: file.frontmatter.label,
@@ -43,7 +44,7 @@ const audioTracks = audioFiles.map((file: any) => {
 // });
 ---
 
-<Layout title="Suborna Dash Tuli | Professional Voiceover Artist & Poetry Narrator">
+<Layout title="Subarna Das Tuli | Professional Voiceover Artist & Poetry Narrator">
   <header class="fixed top-0 w-full z-50 bg-cream/80 backdrop-blur-md border-b border-gold/10 transition-all duration-300">
     <div class="container mx-auto px-6 py-4 flex justify-between items-center">
       <a href="#" class="text-2xl font-serif text-charcoal font-bold tracking-widest uppercase hover:text-gold transition-colors">
@@ -51,6 +52,7 @@ const audioTracks = audioFiles.map((file: any) => {
       </a>
       <nav class="hidden md:flex gap-8 font-sans text-sm font-semibold tracking-widest uppercase text-charcoal/70">
         <a href="#demos" class="hover:text-gold transition-colors block py-2">Demos</a>
+        <a href="#experience" class="hover:text-gold transition-colors block py-2">Experience</a>
         <a href="#services" class="hover:text-gold transition-colors block py-2">Services</a>
         <a href="#contact" class="hover:text-gold transition-colors block py-2">Contact</a>
       </nav>
@@ -63,6 +65,7 @@ const audioTracks = audioFiles.map((file: any) => {
   <main class="pt-20">
     <Hero />
     <AudioGallery tracks={audioTracks} client:visible />
+    <WorkExperience />
     <Services services={cleanServices} />
     {/* <Pricing plans={pricingPlans} /> */}
     {/* <Testimonials client:visible /> */}
@@ -91,9 +94,9 @@ const audioTracks = audioFiles.map((file: any) => {
         </a>
       </div>
       <div class="text-3xl font-serif text-cream font-bold tracking-widest uppercase mb-6 opacity-50">
-        <span class="text-gold">S</span>uborna <span class="text-gold">D</span>ash <span class="text-gold">T</span>uli
+        <span class="text-gold">S</span>ubarna <span class="text-gold">D</span>as <span class="text-gold">T</span>uli
       </div>
-      <p class="text-sm font-light tracking-widest uppercase">&copy; {new Date().getFullYear()} Suborna Dash Tuli. All rights reserved.</p>
+      <p class="text-sm font-light tracking-widest uppercase">&copy; {new Date().getFullYear()} Subarna Das Tuli. All rights reserved.</p>
     </div>
   </footer>
 </Layout>

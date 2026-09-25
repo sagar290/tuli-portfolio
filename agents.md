@@ -1,7 +1,7 @@
-# Project Context: Suborna Dash Tuli Portfolio
+# Project Context: Subarna Das Tuli Portfolio
 
 ## Overview
-This is a minimalist, elegant portfolio website for **Suborna Dash Tuli**, a professional Voiceover Artist and Poetry Reader. The design is sophisticated and artistic, using a soft color palette with high-impact typography.
+This is a minimalist, elegant portfolio website for **Subarna Das Tuli**, a professional Voiceover Artist and Poetry Reader. The design is sophisticated and artistic, using a soft color palette with high-impact typography.
 
 ## Technical Stack
 - **Framework**: [Astro](https://astro.build/) (Static Site Generator)
@@ -42,6 +42,6 @@ This is a minimalist, elegant portfolio website for **Suborna Dash Tuli**, a pro
 3. **Audio Handling**: Players are designed to use high-quality, lossless-grade MP3s.
 
 ## Current Status
-- Site logo and branding updated to "Suborna Dash Tuli" (SDT).
+- Site logo and branding updated to "Subarna Das Tuli" (SDT).
 - Social media links (SoundCloud, Facebook, YouTube) added to Hero and Footer.
 - Project initialized with Git and an initial commit has been made.

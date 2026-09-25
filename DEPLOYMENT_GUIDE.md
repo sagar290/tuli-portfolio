@@ -1,10 +1,10 @@
-# GitHub Pages Deployment Guide for subornadashtuli.com
+# GitHub Pages Deployment Guide for subarna.me
 
 This guide will help you deploy your Astro portfolio to GitHub Pages with your custom domain.
 
 ## Prerequisites
 - GitHub account
-- Domain name: `subornadashtuli.com` (purchased)
+- Domain name: `subarna.me` (purchased)
 - Git installed locally
 
 ## Step 1: Prepare Your GitHub Repository
@@ -46,7 +46,7 @@ This guide will help you deploy your Astro portfolio to GitHub Pages with your c
 ## Step 3: Configure Custom Domain
 
 1. **In GitHub Pages Settings**
-   - Under "Custom domain", enter: `subornadashtuli.com`
+   - Under "Custom domain", enter: `subarna.me`
    - Click "Save"
    - Check "Enforce HTTPS" (wait for DNS to propagate first)
 
@@ -58,7 +58,7 @@ This guide will help you deploy your Astro portfolio to GitHub Pages with your c
 
 ## Step 4: Update DNS at Your Domain Registrar
 
-**Option A: If using the root domain (subornadashtuli.com)**
+**Option A: If using the root domain (subarna.me)**
 
 Add these A records at your domain provider (GoDaddy, Namecheap, etc.):
 
@@ -85,7 +85,7 @@ Type: CNAME    Host: www    Value: sagar290.github.io
 
 2. **Check DNS status**
    - Visit: https://dnschecker.org/
-   - Enter: `subornadashtuli.com`
+   - Enter: `subarna.me`
    - Wait until all servers show green
 
 3. **Verify GitHub Pages status**
@@ -96,7 +96,7 @@ Type: CNAME    Host: www    Value: sagar290.github.io
 ## Step 6: Test Your Website
 
 1. **Visit your domain**
-   - Open: https://subornadashtuli.com
+   - Open: https://subarna.me
    - Verify the site loads correctly
 
 2. **Test SSL/HTTPS**
@@ -144,7 +144,7 @@ Type: CNAME    Host: www    Value: sagar290.github.io
 - ✅ CNAME file is already in `public/CNAME`
 - ✅ GitHub Actions workflow is configured
 - ✅ Build will automatically trigger on push to main branch
-- ✅ Site URL is set to `https://subornadashtuli.com` in config
+- ✅ Site URL is set to `https://subarna.me` in config
 - ✅ SEO meta tags are optimized for search engines
 
 ## File Structure for Deployment
@@ -171,7 +171,7 @@ tulis-portfolio/
 ## Additional SEO Tips
 
 1. **Submit sitemap to Google Search Console**
-   - Add: https://subornadashtuli.com/sitemap-index.xml
+   - Add: https://subarna.me/sitemap-index.xml
    - Helps Google index your site faster
 
 2. **Monitor with Google Analytics**
@@ -190,6 +190,6 @@ tulis-portfolio/
 
 ---
 
-**Your site will be live at:** https://subornadashtuli.com
+**Your site will be live at:** https://subarna.me
 
 **Status:** Ready to deploy! 🚀
